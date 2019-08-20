@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "016Aggregate累加器函数
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "016Aggregate累加器函数2", "016Aggregate累加器函数2\016Aggregate累加器函数2.csproj", "{71B44015-BFFA-4C0C-9B8C-023BAF141417}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "017关于XML", "017关于XML\017关于XML.csproj", "{BB30B8A7-3D81-4CEC-9F76-A3E3A17274D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{71B44015-BFFA-4C0C-9B8C-023BAF141417}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71B44015-BFFA-4C0C-9B8C-023BAF141417}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71B44015-BFFA-4C0C-9B8C-023BAF141417}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB30B8A7-3D81-4CEC-9F76-A3E3A17274D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB30B8A7-3D81-4CEC-9F76-A3E3A17274D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB30B8A7-3D81-4CEC-9F76-A3E3A17274D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB30B8A7-3D81-4CEC-9F76-A3E3A17274D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
