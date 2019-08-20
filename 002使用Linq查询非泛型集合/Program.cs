@@ -14,15 +14,15 @@ namespace _001使用Linq查询非泛型集合
             ArrayList persons = new ArrayList()
             {
                 new Person {Name="shanzm",Age=13 },
-                new Person {Name="shanzm2" ,Age=15 }
+                new Person {Name="shanzm2",Age=15 }
             };
 
-            ////ArrayList persons：定义的是非泛型的所以Linq语句是无法使用的： from p in persons where p.Age > 14 select p
-            ////List<Person>就是泛型，就可以使用Linq
+            //ArrayList persons：定义的是非泛型的所以Linq语句是无法使用的： from p in persons where p.Age > 14 select p
+            //List<Person>就是泛型，就可以使用Linq
             var myArrayList = persons.OfType<Person>();
 
             //var result = from p in myArrayList where p.Age > 14 select p;//使用Linq语句
-            var result = myArrayList.Where(p =>p.Age>14);//使用Linq函数
+            var result = myArrayList.Where(p => p.Age > 14);//使用Linq函数
 
             foreach (var item in result)
             {
