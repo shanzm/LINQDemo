@@ -11,7 +11,13 @@ namespace _015关于Enumerable中的方法
         static void Main(string[] args)
         {
             ///以下的所有方法都可以按照静态方法调用：如：Eumerable.First(groupA)....
-            var groupA = new[] { 1, 2, 3, 4, 5, 5, 6, 6, 10 };
+            var groupA = new[] { 1, 2, 3, 4, 5, 5, 6, 6, 10, 0 };
+
+            var orderByElement = groupA.OrderBy(n => n);//升序排序：若是数组类型则等价于.Sort();
+            var orderByDescendingElement = groupA.OrderByDescending(n => n);//降序排列
+            //注意如果需要多个排序条件，可以接着使用：.ThenBy(Func)
+            Array.ForEach(orderByDescendingElement.ToArray(), n => Console.WriteLine("\r\n" + n + " "));
+
 
             var firstElement = groupA.First();//取第一个元素
 
@@ -37,7 +43,7 @@ namespace _015关于Enumerable中的方法
 
             Array.ForEach(groupA.Reverse().ToArray(), n => Console.Write(n + " "));//元素倒序
 
-            var anyElement = groupA.Any();//判断容器是否为空，不为空则true
+            var anyElement = groupA.Any();//判断容器是否为空，不为空则true,效果等价于groupA.Count()>0;
 
             var IsAnyEven = new int[] { 1, 3, 4 }.Any(n => (n % 2) == 0);//是否有一部分元素满足是偶数,返回值是true
 
@@ -45,7 +51,23 @@ namespace _015关于Enumerable中的方法
 
 
 
-            Console.WriteLine("结果" + CountOddElement);
+            Console.WriteLine("\r\n" + "--------------------------------");
+
+            //将groupA中的数组分页显示，每页显示2条数据
+            #region linq分页
+            var dateList = new[] { "shan1", "shan2", "shan3", "shan4", "shan5", "shan6", "shan7" };
+            int pageSize = 2;//每页两个数据
+            double dataTotal = Convert.ToDouble(dateList.Length);//共计7条数据,注意使用double类型，为了dataTotal / pageSize结果也是double类型
+            int pageTatol = Convert.ToInt32(Math.Ceiling(dataTotal / pageSize));//共计4页
+
+            int pageIndex = 3;//选取第3页的数据
+
+            //Skip(n)为跳过n个元素，Take（n)获取n个数据（不足n条也不会报错）
+            var pageContent = dateList.Skip(pageSize * (pageIndex - 1)).Take(pageSize).ToList();
+            Array.ForEach(pageContent.ToArray(), n => Console.WriteLine(n));//输出：shan5,shan6
+            #endregion
+
+
 
 
             Console.ReadKey();
