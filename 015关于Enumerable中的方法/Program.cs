@@ -10,6 +10,7 @@ namespace _015关于Enumerable中的方法
     {
         static void Main(string[] args)
         {
+            ///标准查询运算符
             ///以下的所有方法都可以按照静态方法调用：如：Eumerable.First(groupA)....
             var groupA = new[] { 1, 2, 3, 4, 5, 5, 6, 6, 10, 0 };
 
@@ -19,7 +20,10 @@ namespace _015关于Enumerable中的方法
             Array.ForEach(orderByDescendingElement.ToArray(), n => Console.WriteLine("\r\n" + n + " "));
 
 
-            var firstElement = groupA.First();//取第一个元素
+            var firstElement1 = groupA.First();//取第一个元素,
+                                               //若没有则引发异常:InvalidOperationException 异常
+            var firstElement2 = groupA.FirstOrDefault();//取第一个元素,
+                                                        //若没有则：对于可以为null的对象，默认值为null，对于不能为null的对象，如int，默认值为0
 
             var MaxElement = groupA.Max();//取最大值
 
@@ -39,7 +43,10 @@ namespace _015关于Enumerable中的方法
 
             var IsEqual = groupA.SequenceEqual(new[] { 1, 2, 3, 4, 5, 5, 6, 6, 10 });//判断两个容器是否相同
 
-            var singleElement = (new[] { 99 }).Single();//判断容器中是否只有一个元素，若是则反正这个元素，否则报错
+            var singleElement = (new[] { 99 }).Single();//判断容器中是否只有一个元素，若是则反回这个元素，否则引发异常
+            var singleElement2 = (new[] { 99 }).SingleOrDefault();//若只有一个元素，若是则反回这个元素，
+                                                                  //如果该序列为空，则返回默认值,可空类型的默认值是null,整型等类型默认值是0
+                                                                  //若果该序列有多个元素则引发异常
 
             Array.ForEach(groupA.Reverse().ToArray(), n => Console.Write(n + " "));//元素倒序
 
@@ -49,7 +56,7 @@ namespace _015关于Enumerable中的方法
 
             var IsAllEven = new int[] { 2, 4 }.All(n => (n % 2) == 0);//若全是偶数则为true
 
-
+            var whereElement = groupA.Where(n => n > 9);
 
             Console.WriteLine("\r\n" + "--------------------------------");
 

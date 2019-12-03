@@ -27,8 +27,8 @@ namespace _018Join
 
             //查询语法
             var query1 = from c in customers
-                        join p in purchase on c.Id equals p.CustomerId
-                        select new { c.Name, p.Price };
+                        join p in purchase on c.Id equals p.CustomerId//注意使用：equals，而不是:"=="
+                         select new { c.Name, p.Price };
             query1.WriteLineAll();
 
             Console.WriteLine("----------------------------------");

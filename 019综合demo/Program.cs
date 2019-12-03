@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _018Join_OrderBy
+namespace _019综合demo
 {
     class Program
     {
@@ -30,7 +30,8 @@ namespace _018Join_OrderBy
             //查询语法
             var query1 = from c in customers
                          join p in purchase on c.Id equals p.CustomerId
-                         orderby p.Price
+                         where p.Price > 100
+                         orderby p.Price descending//默认是ascending升序，可以有多个排序键：orderby p.Price,p.DateTime
                          select new { c.Name, p.Price };
             query1.WriteLineAll();
 
@@ -41,8 +42,9 @@ namespace _018Join_OrderBy
                 purchase,
                 c => c.Id,
                 p => p.CustomerId,
-                (c,p)=>new { c.Name, p.Price }
-                ).OrderBy(x=>x.Price );
+                (c, p) => new { c.Name, p.Price }
+                ).Where(x => x.Price > 100).OrderBy(x => x.Price);//倒序排列：.OrderByDescending(),
+                                                                  //若是多个排序键则:.ThenBy(p=>p.DateTime)
             query2.WriteLineAll();
             Console.ReadKey();
 
