@@ -15,7 +15,8 @@ namespace _004Intersect函数_交集
             List<string> strList1 = new List<string>() { "a", "b", "c" };
             List<string> strList2 = new List<string>() { "a", "q", "w" };
 
-            var listIntersection = (from o in strList1 select o).Intersect(from o in strList2 select o);
+            //var listIntersection = (from o in strList1 select o).Intersect(from o in strList2 select o);
+            var listIntersection = strList1.Intersect(strList2);
             Array.ForEach(listIntersection.ToArray(), o => Console.WriteLine($"两个集合的交集:{o}"));
             Console.ReadKey();
         }

@@ -15,8 +15,9 @@ namespace _005Union函数_并集
 
             ///Union（）方法返回的是多个LINQ查询中的所有成员。
             ///与严格意义上的合并一样，如果相同的成员出现多次，将只能返回一个
-            var listUnion = (from o in strList1 select o).Union(from o in strList2 select o);
-            Array.ForEach(listUnion.ToArray(), o => Console.WriteLine($"两个集合的并集:{o}"));
+            //var listUnion = (from o in strList1 select o).Union(from o in strList2 select o);
+            var listUnion = strList1.Union(strList2);
+            Array.ForEach(listUnion.ToArray(), o => Console.WriteLine($"两个集合的并集:{o}"));//结果：a,b,c,q,w
             Console.ReadKey();
         }
     }
