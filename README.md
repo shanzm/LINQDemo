@@ -1,4 +1,4 @@
-# LinqDemo
+# LINQ Demo
 * 000 数组的ForEach函数
 * 001 使用Linq查询非泛型集合
 * 002 使用ofType筛选数据
