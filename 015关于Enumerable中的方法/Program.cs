@@ -70,6 +70,7 @@ namespace _015关于Enumerable中的方法
             int pageIndex = 3;//选取第3页的数据
 
             //Skip(n)为跳过n个元素，Take（n)获取n个数据（不足n条也不会报错）
+            //注意若是linq to EF 则使用Skip（）函数前一定要先使用Orderby（）函数排序
             var pageContent = dateList.Skip(pageSize * (pageIndex - 1)).Take(pageSize).ToList();
             Array.ForEach(pageContent.ToArray(), n => Console.WriteLine(n));//输出：shan5,shan6
             #endregion
