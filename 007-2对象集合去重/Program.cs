@@ -44,7 +44,7 @@ namespace _007_2对象集合去重
             List<Student> students3 = students.DistinctBy(n => new { n.ID, n.Gender }).ToList();
             students3.ForEach(n => Console.WriteLine(n.ID + n.Name + n.Age + n.Gender));
 
-
+            
 
             Console.ReadKey();
         }
