@@ -47,6 +47,11 @@ namespace _018Join
             Console.ReadKey();
 
 
+            //todo:
+            //自定义扩展方法，对IEnumber<T>添加扩展方法
+            //实现左右连接和全连接
+            purchase.LeftJoin()
+
         }
     }
 
