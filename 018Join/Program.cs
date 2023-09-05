@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace _018Join
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var customers = new[]
             {
@@ -27,7 +27,7 @@ namespace _018Join
 
             //查询语法
             var query1 = from c in customers
-                        join p in purchase on c.Id equals p.CustomerId//注意使用：equals，而不是:"=="
+                         join p in purchase on c.Id equals p.CustomerId//注意使用：equals，而不是:"=="
                          select new { c.Name, p.Price };
             query1.WriteLineAll();
 
@@ -41,23 +41,21 @@ namespace _018Join
                 purchase,//连接对象
                 c => c.Id,//左表字段
                 p => p.CustomerId,//右表字段
-                (c,p)=> new { c.Name, p.Price }//查询
+                (c, p) => new { c.Id, c.Name, p.Price }//查询
                 );
             query2.WriteLineAll();
             Console.ReadKey();
 
-
             //todo:
             //自定义扩展方法，对IEnumber<T>添加扩展方法
             //实现左右连接和全连接
-            purchase.LeftJoin()
-
+            // purchase.LeftJoin()
         }
     }
 
     public static class Extender
     {
-        public static void WriteLineAll<T>(this IEnumerable <T> list)
+        public static void WriteLineAll<T>(this IEnumerable<T> list)
         {
             Array.ForEach(list.ToArray(), n => Console.WriteLine(n));
         }

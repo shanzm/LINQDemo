@@ -53,6 +53,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0000扩展方法+委托做�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "021动态Linq库Gridify", "021动态Linq库Gridify\021动态Linq库Gridify.csproj", "{995418C1-FB2F-478C-AFF5-C541B3732324}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "22Linq递归实现查询子节点", "22Linq递归实现查询子节点\22Linq递归实现查询子节点.csproj", "{A9DD1BCD-22BD-44D7-9171-32013DBA9905}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "007-3对象集合去重", "007-3对象集合去重\007-3对象集合去重.csproj", "{E8588A68-CB9C-4EB9-A2A1-6484736DC185}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -159,6 +163,14 @@ Global
 		{995418C1-FB2F-478C-AFF5-C541B3732324}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{995418C1-FB2F-478C-AFF5-C541B3732324}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{995418C1-FB2F-478C-AFF5-C541B3732324}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9DD1BCD-22BD-44D7-9171-32013DBA9905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9DD1BCD-22BD-44D7-9171-32013DBA9905}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9DD1BCD-22BD-44D7-9171-32013DBA9905}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9DD1BCD-22BD-44D7-9171-32013DBA9905}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8588A68-CB9C-4EB9-A2A1-6484736DC185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8588A68-CB9C-4EB9-A2A1-6484736DC185}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8588A68-CB9C-4EB9-A2A1-6484736DC185}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8588A68-CB9C-4EB9-A2A1-6484736DC185}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
